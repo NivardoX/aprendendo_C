@@ -11,15 +11,15 @@ int main(){
 	printf("Digite os numeros a serem operados!\n");	
 	scanf("%d %d", &x, &y);
 
-	int soma = x + y;
-	int sub = x - y;
-	int prod = x * y;
-	int div = x / y;
-
-
 	if(opc == 'q' && y == 0) {
 		printf("operacao invalida\n");
 		}else {
+		
+		int soma = x + y;
+		int sub = x - y;
+		int prod = x * y;
+		int div = x / y;
+				
 		switch(opc){
 			case 's':
 			printf("O resultado da soma eh %d\n", soma);
