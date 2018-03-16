@@ -1,2 +1,0 @@
-# aprendendoC
-epoca de fracasso
