@@ -2,15 +2,20 @@
 int main(){
 
 	char opc;
-	printf("Selecione uma das operacoes : \nS - Soma\nD - Diferenca\nP - produto\nQ - Divisao\n");
-	scanf("%c", &opc);
-	
 	int x;
 	int y;
 	
-	printf("Digite os numeros a serem operados!\n");	
-	scanf("%d %d", &x, &y);
-
+	printf("Selecione uma das operacoes : \nS - Soma\nD - Diferenca\nP - produto\nQ - Divisao\n");
+	scanf("%c", &opc);
+	
+	if(opc != 's' && opc != 'd' && opc != 'q' && opc != 'p'){
+		printf("Opcao invalida!");
+		return 0;
+	}else{
+		printf("Digite os numeros a serem operados!\n");	
+		scanf("%d %d", &x, &y);
+	}
+	
 	if(opc == 'q' && y == 0) {
 		printf("operacao invalida\n");
 		}else {
@@ -34,7 +39,7 @@ int main(){
 			printf("O resultado da divisao eh %d\n", div);
 			break;
 			default:
-			printf("Invalido!");
+			printf("Invalido!/n");
 		}
 	}
 
