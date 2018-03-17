@@ -13,29 +13,30 @@ int main(){
 	printf("DIgite 4 palavras\n");
 	scanf("%s %s %s %s", a, b, c, d);
 		
+
 	int ab = strcmp(a, b); 
-	int ac = strcmp(a, c)	;
-	int ad =  strcmp(a, d);
+	int ac = strcmp(a, c);	
+	int ad = strcmp(a, d);
 	int bc = strcmp(b, c);
 	int bd = strcmp(b, d);
 	int cd = strcmp(c, d);
 
 	if(ab > 0){
-		strcpy(ax, a) ;
+		strcpy(ax, a);
 		strcpy(a, b);
 		strcpy(b, ax);  
 	}
 
 	if(ac > 0){
-		strcpy(ax, c);
-		strcpy(c, a);
-		strcpy(a, ax);
+		strcpy(ax, a);
+		strcpy(a, c);
+		strcpy(c, ax);
 	}
 
 	if(ad > 0){
-		strcpy(ax, d);
-		strcpy(d, a);
-		strcpy(a, ax);
+		strcpy(ax, a);
+		strcpy(a, d);
+		strcpy(d, ax);
 	}
 
 	if(bc > 0){
@@ -46,15 +47,15 @@ int main(){
 
 	if(bd > 0){
 		strcpy(ax, b);
-		strcpy(d, b);
+		strcpy(b, d);
 		strcpy(d, ax);
 	}	
 
 	if(cd > 0){
-		strcpy(ax, d);
-		strcpy(d, c);
-		strcpy(c, ax);
-	}	
+		strcpy(ax, c);
+		strcpy(c, d);
+		strcpy(d, ax);
+} 
 
 
 
