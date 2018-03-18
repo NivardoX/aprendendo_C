@@ -27,18 +27,15 @@ int main(){
 	scanf("%c", &resposta);
 	
 	if(resposta == 'y'){
-	    int i, n;
+	    printf("sorteando...\n");
+		int i, n;
    		time_t t;
-   
-   		n = 10000;
-   
-   	
+   		n = 429496729;
    		srand((unsigned) time(&t));
-
-	   
+		
    		for( i = 0 ; i < n ; i++ ) {
-      	int sort = rand() % 16;
-		//printf("%d\n", sort);
+      			int sort = rand() % 16;
+			//printf("%d\n", sort);
 		
 		switch(sort){
 			case 0:	
@@ -108,7 +105,9 @@ int main(){
 		}
 		
    }
-}
+}else {
+	printf("boa escolha\n");
+	}
 
 printf("0 %d vezes\n1 %d vezes\n2 %d vezes\n3 %d vezes\n4 %d vezes\n5 %d vezes\n6 %d vezes\n7 %d vezes\n8 %d vezes\n9 %d vezes\n10 %d vezes\n11 %d vezes\n12 %d vezes\n13 %d vezes\n14 %d vezes\n15 %d vezes\n", r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15);
 	return 0;
