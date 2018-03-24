@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <windows.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -103,12 +102,11 @@ int main(){
 			break;
 			
 		}
-		
+		printf("\n%d\n\n0 %d vezes\n1 %d vezes\n2 %d vezes\n3 %d vezes\n4 %d vezes\n5 %d vezes\n6 %d vezes\n7 %d vezes\n8 %d vezes\n9 %d vezes\n10 %d vezes\n11 %d vezes\n12 %d vezes\n13 %d vezes\n14 %d vezes\n15 %d vezes\n\n",sort, r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15);
    }
 }else {
 	printf("boa escolha\n");
 	}
 
-printf("0 %d vezes\n1 %d vezes\n2 %d vezes\n3 %d vezes\n4 %d vezes\n5 %d vezes\n6 %d vezes\n7 %d vezes\n8 %d vezes\n9 %d vezes\n10 %d vezes\n11 %d vezes\n12 %d vezes\n13 %d vezes\n14 %d vezes\n15 %d vezes\n", r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15);
 	return 0;
 }
