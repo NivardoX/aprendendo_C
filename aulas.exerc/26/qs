@@ -1,0 +1,47 @@
+qs
+
+- faca um programa que leia um inteiro e apresente a seguinte saida
+ n = 4
+ 	*
+   * *
+ *  * *
+* *  *  *
+
+- faca um programa que leia um inteiro e apresente a saida
+n = 4
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13
+14 15
+16
+	
+
+- soma dos fatoriais 
+faca um programa que calcula a soma dos fatoriais de  1 a 20
+
+- fibonacci faca um programa que rouba um numero N e apresente a sequencia de fibonacci ate o n-enesimo elemento dessa sequencia, o fib(i) é obitido por
+fib(i) 1, se n<= 2
+		fib(i -1 ) + fib(i-2), se n > 2
+
+ex n = 7
+saida = 1 1 2 3 4 8 13
+
+
+i = 0;
+
+
+while(i < v){
+if( i = 1){
+	printf("%d\n", i);
+	i++
+} else {
+	WHILE(i1 < i){
+	printf("%d ", i);
+	i1++	
+	i++
+}
+
+	}
+}
