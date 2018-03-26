@@ -29,19 +29,12 @@ ex n = 7
 saida = 1 1 2 3 4 8 13
 
 
-i = 0;
+- faca um programa que calcule o valor de r
+	r = 1/1! + 2/1+2! + 3/ 2+3! ... +n/(n-1)+n!
+	pra um dado valor n
 
+- faca um programa que calcule a soma de dois inteiros com 10 elevado a 10 digitos
 
-while(i < v){
-if( i = 1){
-	printf("%d\n", i);
-	i++
-} else {
-	WHILE(i1 < i){
-	printf("%d ", i);
-	i1++	
-	i++
-}
+- faca um programa que inverta uma string
 
-	}
-}
+- faca um programa que calcule o mdc de dois numeros inteiros
