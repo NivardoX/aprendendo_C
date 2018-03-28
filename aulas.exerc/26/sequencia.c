@@ -10,7 +10,7 @@ int main(){
 	i = 1;
 	while(i <= v){
 		if(i == 1){
-			printf("%d\n", i);
+			printf("%d\n", k);
 			k++;
 	}else {
 		i1 = 1;
@@ -24,13 +24,21 @@ int main(){
 		i++;
 }
 
-	while(v > 1){	//decrescente
-		if(v == 1){
-			printf("%d\n", );
+	while(i >= 1){	//decrescente
+		if(i == 1){
+			printf("%d\n",k);
 
 	}else {
-		
+		i1 = 1;
+		while(i1 <= i){			
+			printf("%d ",k);
+			i1++;
+			k++;
+		}
+		printf("\n");	
+
 	}
+		i--;
 } 
 
 
