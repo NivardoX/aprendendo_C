@@ -10,7 +10,7 @@ int main(){
 	i = 1;
 	while(i <= v){
 		if(i == 1){
-			printf("%d\n", k);
+			printf("%d\n", i);
 			k++;
 	}else {
 		i1 = 1;
@@ -24,6 +24,7 @@ int main(){
 		i++;
 }
 
+	i-=2;			//decremento p/ funcao
 	while(i >= 1){	//decrescente
 		if(i == 1){
 			printf("%d\n",k);
