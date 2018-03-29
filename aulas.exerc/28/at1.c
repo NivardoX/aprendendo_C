@@ -1,15 +1,21 @@
-pseudocodigo
-  string 1 = "abcdef"
-  string 2 = "xyzw"
-  string 3[tamanho de 1 e 2 mais 1(/0) = " " 
-  
-  i,j
-  for(i = 0;str1[i] != '/0' ;i++) //enqnt i diferente de /0
-    str3[i] = str1[i]
-  
-  j = i //guardar tamanho da primeira string
-  for(i = 0;str2[2];i++)
-    str3[i+j] = str2[i]
-    
-  str3[i+j] = '\0'
-  printf("%s",str3);
+#include <stdio.h>
+int main(){
+
+	char str1[6] = "cala ",
+		 str2[6] = "bocak",
+		 str3[11] = "";
+	int i,j;
+
+
+	for(i = 0; str1[i] != '\0'; i++){
+		str3[i] = str1[i];
+}	
+	j = i;
+	for(i = 0; str2[i] != '\0'; i++){
+		str3[i+j] = str2[i];
+}
+
+	printf("A string 1 eh %s, string 2 eh %s\nAs strings concatenadas eh %s\n", str1, str2, str3);
+
+	return 0;
+}
