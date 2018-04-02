@@ -2,3 +2,9 @@
 *Algoritmos
 	-ordenacao por selcao
 		troca de valores, sequenciando por tamanho
+	-ordenacao por insercao(insertion sort)
+		troca de valores, ao verificar se o valor anterior é menor
+
+
+problem
+- union - find
