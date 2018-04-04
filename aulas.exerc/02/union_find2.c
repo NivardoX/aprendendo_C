@@ -23,7 +23,7 @@ int main(){
 
 	//insercao de subvetores
 	for(i = 0; i < nVet; i++){
-		printf("Digite o %d subvetor:\n", i);
+		printf("Digite o %d subvetor:\n", i+1);
 		scanf("%d", &v[i]);		
 	}
 
@@ -32,7 +32,7 @@ int main(){
 		printf("tamanho de vetor invalido.\n");
 	} else{
 		//loop para quantidadde de operacoes
-		for(i = 0; i < nOpera; i++);{
+		for(i = 0; i < nOpera; i++){
 
 
 			//condicional se valor de nOpera = 0
@@ -45,8 +45,8 @@ int main(){
 				
 				//selecao de operacao
 				printf("Escolha a operacao a ser realizada:\nU - Union\nF - Find\n");
-				scanf("%c", &opcao);
-				printf("Opcao selecionada %c", opcao);
+				scanf(" %c", &opcao);
+				printf("Opcao selecionada %c\n", opcao);
 
 				//switch de casos	
 				switch(opcao) {
@@ -61,16 +61,22 @@ int main(){
 						scanf("%d", &p1);
 						printf("Digite o segundo valor.\n");				
 						scanf("%d", &p2);
-						printf("Os valores escolhidos foram %d e %d\n.", p1, p2);
+						printf("Os valores escolhidos foram %d e %d.\n", p1, p2);
 						
+						//ajustar p1 e p2 com -1 para leitura correta de posicao
+						p1 = p1 - 1;
+						p2 = p2 - 1;						
+						
+						//printf do vetor					
 						printf("O vetor inicial é\t");
 						for(i = 0; i < nVet; i++){
 							printf("%d ", v[i]);
 						}
 						printf("\n");
 
-						if(v[p1] == v[p2]){
-							printf("nao foi");
+						//condicional para checar igualdade entre valores inseridos
+						if(p1 == p2){
+							printf("valores invalidos");
 						}	else{
 								vAux = v[p1];
 								v[p1] = v[p2];
@@ -80,18 +86,26 @@ int main(){
 									if(v[i] == vAux){
 										v[i] = v[p2];
 									}
-				
-							}
-							printf("O vetor final é\t\t");
-							for(i = 0; i < nVet; i++){
-								printf("%d ", v[i]);		
-							}
 								}
+								//printf do vetor
+								printf("O vetor final é\t\t");
+								for(i = 0; i < nVet; i++){
+									printf("%d ", v[i]);		
+								}
+							}
 						break;
 					
 					//case find
 					case 'f': 
-						resposta = (v[p2] == v[p1] ? 'T' : 'v');
+						//selecao de valores a serem operados
+						printf("\nDigite os valores a serem buscados.\n");
+						printf("Digite o primeiro valor.\n");				
+						scanf("%d", &p1);
+						printf("Digite o segundo valor.\n");				
+						scanf("%d", &p2);
+						printf("Os valores escolhidos foram %d e %d.\n", p1, p2);
+						//funcao find						
+						resposta = (v[p2] == v[p1] ? 'T' : 'F');
 						printf("O find é %c", resposta);
 						break;
 			
