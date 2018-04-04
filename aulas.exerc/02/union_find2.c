@@ -9,9 +9,9 @@ int main(){
 	char opcao, resposta;
 
 
-//	valores p1, p2
-//	p1 posicao1
-//	p2 posicao2
+/*	valores p1, p2
+	p1 posicao1
+	p2 posicao2 */
 
 	//tamanho do vetor
 	printf("Digite a quantidade de subvetores: \n");
@@ -29,26 +29,25 @@ int main(){
 	//condicional se nVet = 0
 	if(nVet == 0){
 		printf("tamanho de vetor invalido.\n");
-	} else{
-		//loop para quantidadde de operacoes
-		for(i = 0; i < nOpera; i++){
-
-
-			//condicional se valor de nOpera = 0
-			if(nOpera == 0){
-				printf("0 operacoes requisitadas.\n");
-			} else{
-
-
-
-				
+	
+	//condicional se valor de nOpera = 0
+	}else if(nOpera == 0){
+			printf("0 operacoes requisitadas.\n");
+		}else{
+			//loop para quantidadde de operacoes
+			for(i = 0; i < nOpera; i++){
+		
 				//selecao de operacao
-				printf("Escolha a operacao a ser realizada:\nU - Union\nF - Find\n");
+				printf("\nEscolha a operacao a ser realizada:\nU - Union\nF - Find\n");
 				scanf(" %c", &opcao);
 				printf("Opcao selecionada %c\n", opcao);
 
 				//switch de casos	
 				switch(opcao) {
+				
+					/*PROBLEM
+					-caso 'u' nao entrando em loop de repeticao
+					*/					
 
 					//case union
 					case 'u':
@@ -113,7 +112,7 @@ int main(){
 				}
 			}
 		}
-	}
+	
 		
 	printf("\n");
 
