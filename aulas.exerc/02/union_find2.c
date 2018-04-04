@@ -7,7 +7,6 @@ int main(){
 	int p2 = 5;
 	int i, vAux, nVet, nOpera;
 	char opcao, resposta;
-	opcao = 'u';
 
 
 //	valores p1, p2
