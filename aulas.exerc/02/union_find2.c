@@ -1,11 +1,11 @@
-#include <stdio.h> //unfinished
+#include <stdio.h> 
 int main(){
 
 	int v[1000];
 //	int v[1000] = {0, 1, 2, 2, 4, 5};
 	int p1 = 2;
 	int p2 = 5;
-	int i, vAux, nVet, nOpera;
+	int i, j, vAux, nVet, nOpera;
 	char opcao, resposta;
 
 
@@ -35,7 +35,7 @@ int main(){
 			printf("0 operacoes requisitadas.\n");
 		}else{
 			//loop para quantidadde de operacoes
-			for(i = 0; i < nOpera; i++){
+			for(j = 0; j < nOpera; j++){
 		
 				//selecao de operacao
 				printf("\nEscolha a operacao a ser realizada:\nU - Union\nF - Find\n");
@@ -45,10 +45,7 @@ int main(){
 				//switch de casos	
 				switch(opcao) {
 				
-					/*PROBLEM
-					-caso 'u' nao entrando em loop de repeticao
-					*/					
-
+				
 					//case union
 					case 'u':
 						//union
