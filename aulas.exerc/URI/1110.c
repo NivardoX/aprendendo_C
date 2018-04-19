@@ -2,7 +2,7 @@
 
 int main(){
 
-	int k,i,n,j,vet[50],vetD[50];
+	int k,i,n,j,vet[50],vetD[49];
 	
 	while(scanf("%d", &n) != 0 && n != 0){
 		
