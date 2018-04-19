@@ -1,10 +1,10 @@
-#include <stdio.h>//unfinished
+#include <stdio.h>
 
 int main(){
 
 	int k,i,n,j,vet[50],vetD[50];
 	
-	while(scanf("%d", &n) != 0){
+	while(scanf("%d", &n) != 0 && n != 0){
 		
 		//definicao de vetor
 		for(i = 1; i <= 50; i++){
@@ -38,11 +38,11 @@ int main(){
 		}
 		printf("\nRemaining card: %d\n", vet[0]);
 		
-
+		/* print vetor modificado
 		for(i = 0; i < 10; i++){
 			printf("%d, ", vet[i]);
 		}
-		printf("\n")
+		printf("\n");*/
 	}
 
 	return 0;
