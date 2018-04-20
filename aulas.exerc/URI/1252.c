@@ -1,4 +1,4 @@
-#include <stdio.h>//unfinished
+#include <stdio.h>//timelimit error
 int main(){	
 	int n,m,i,k,vt[10001],aux;	
 	while(scanf("%d %d",&n,&m), n != 0 && m != 0){	
