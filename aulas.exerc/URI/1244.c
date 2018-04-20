@@ -1,4 +1,4 @@
-#include <stdio.h> //presentation error
+#include <stdio.h>
 int main(){
 	int aux,n,k,i,vtI[50],vtT[50],j,p;
 	char str[2601];
@@ -10,7 +10,7 @@ int main(){
 			vtT[i] = 0;	
 		}
 		vtT[0] = 1;
-		vtI[0] = 1;
+		vtI[0] = 1;//problema qnd primeiro caracter é espaco
 		i = 1;
 		j = 1;
 		p = 0;
