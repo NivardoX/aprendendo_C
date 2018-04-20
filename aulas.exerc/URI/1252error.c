@@ -10,19 +10,19 @@ int main(){
 		}
 
 		for(i = 0; i < n; i++){
-			for(k = i+1; k <= n; k++){
+			for(k = i+1; k < n; k++){
 	
-				if(vt[i]%m > vt[k]%m){
+				if(vt[i]%m > vt[k]%m){//ascendente por modulo
 					aux = vt[i];
 					vt[i] = vt[k];
-					vt[i] = aux;
+					vt[k] = aux;
 
 				}else if(vt[i]%m == vt[k]%m){
-					}if(vt[i]%2 == 0 && vt[k]%2 == 1){
+					if(vt[i]%2 == 0 && vt[k]%2 == 1){
 						//troca impar na frente
 						aux = vt[i];
 						vt[i] = vt[k];
-						vt[i] = aux;
+						vt[k] = aux;
 
 					}else if(vt[i]%2 == 1 && vt[k]%2 == 1 && vt[i] < vt[k]){
 						//troca 2 impares, maior na frente
@@ -35,8 +35,8 @@ int main(){
 						aux = vt[i];
 						vt[i] = vt[k];
 						vt[k] = aux;
-
-					}							
+					}				
+				}			
 			}
 
 		}
