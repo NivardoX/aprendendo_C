@@ -1,0 +1,36 @@
+#include <stdio.h>
+int n, M, e = 0, r = 0, i, j, n1, n2;
+char op;
+void function () {
+		int num [100001] = {0};
+		while (M--){
+			scanf ("%c %d %d", &op, &n1, &n2);
+			getchar ();
+			switch (op) {
+			 	case ('M'): 
+					for (i = n1; i <= n2; i++){
+						num[i]++;
+						num [i] = num [i] > 2? 0 : num [i];  
+					}
+				break;
+				case ('C'):
+					for (e = 0, r = 0, i = n1; i <= n2; i++){
+						if (num [i] == 1)
+							e++;
+						else if (num[i] == 2)
+							r++;
+					}
+					printf ("%d %d %d\n", (n2-n1+1)-e-r, e, r);
+				break;
+			}
+
+		}
+}
+int main () {
+	while (scanf ("%d %d", &n, &M) != EOF){
+	getchar ();
+	function ();
+	printf ("\n");
+	}
+	return 0;
+}
