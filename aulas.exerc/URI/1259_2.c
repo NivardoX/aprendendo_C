@@ -6,7 +6,7 @@ int main(){
 	scanf("%d", &n);
 
 	for(j = 0; j < n; j++){
-		scanf("%d", &vt[i]);
+		scanf("%d", &vt[j]);
 
         i = j;
         if(i != 0 && vt[i]% 2 == 0){
