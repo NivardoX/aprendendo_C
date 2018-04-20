@@ -1,4 +1,4 @@
-#include <stdio.h>//timelimit error
+#include <stdio.h> //timelimite error
 int main(){	
 	int n,m,i,k,vt[10001],aux;	
 	while(scanf("%d %d",&n,&m), n != 0 && m != 0){	
@@ -12,11 +12,11 @@ int main(){
 					vt[i] = vt[k];
 					vt[k] = aux;
 				}else if(vt[i]%m == vt[k]%m){
-					if(vt[i]%2 == 0 && vt[k]%2 == 1){
+					if(vt[i]%2 == 0 && vt[k]%2 != 0){
 						aux = vt[i];
 						vt[i] = vt[k];
 						vt[k] = aux;
-					}else if(vt[i]%2 == 1 && vt[k]%2 == 1 && vt[i] < vt[k]){
+					}else if(vt[i]%2 != 0 && vt[k]%2 != 0 && vt[i] < vt[k]){
 						aux = vt[i];
 						vt[i] = vt[k];
 						vt[k] = aux;
