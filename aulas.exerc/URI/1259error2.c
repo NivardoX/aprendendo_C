@@ -1,14 +1,15 @@
 #include <stdio.h>
+#define tam 100000
 int main(){
 
-	int parPos,impPos,vtP[10000],vtI[10000];
+	int parPos,impPos,vtP[tam],vtI[tam];
 	int n,i,v,aux;
 
 	scanf("%d", &n);
 
 	vtP[0] = 0;
 	vtI[0] = 0;
-	parPos = 1;
+	parPos = 0;
 	impPos = 0;
 
 	while(n--){
@@ -27,19 +28,31 @@ int main(){
 					break;			
 				}
 			}
-
 			parPos++;
 
 		} else{
+			vtI[impPos] = v;
+			i = impPos;
 
+			for(i; i > 0; i--){
+				if(vtI[i] > vtI[i-1]){
+					aux = vtI[i];
+					vtI[i] = vtI[i-1];
+					vtI[i-1] = aux;
+				}else{
+					break;			
+				}
+			}
 
-		
+			impPos++;
 		}	
 
 	}
-	printf("\n");
 	for(i = 0; i < parPos; i++){
 		printf("%d\n", vtP[i]);
+	}
+	for(i = 0; i < impPos; i++){
+		printf("%d\n", vtI[i]);
 	}
 
 
