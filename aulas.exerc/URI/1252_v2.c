@@ -1,13 +1,19 @@
 #include <stdio.h>
+#define tam 10001
 int main(){
 
-	int vt0[10001], vt1[10001], vt2[10001];
-	int i,posV0,posV1,posV2,n,m,vA_0,vA_1,vA_2,v,j;
+	int vt02[tam], vt01[tam], vt0[tam], vt1[tam], vt2[tam];//vetores para casos
+	int posV02,posV01,posV0,posV1,posV2,vA_02,vA_01,vA_0,vA_1,vA_2;	//contadores especificos e mantenedores de valor
+	int i,v,j,n,m;//contadores e entradas
 
 
 	while(scanf("%d %d",&n,&m), n!=0 && m!=0){
-
+	
 		j = n;	
+
+		//zerando contadores
+		posV02 = 0;
+		posV01 = 0;
 		posV0 = 0;
 		posV1 = 0;
 		posV2 = 0;
@@ -87,9 +93,62 @@ int main(){
 			 	}
 				posV2++;
 
-			}
+			}else if(v%m == -1){
+				if(posV01 == 0){
+					vt01[0] = v;
+				}else{
+					vA_01 = vt01[posV01-1];//valor do vetor na posicao anterior
+					i = posV01 - 1;
+					while(i >= 0){
+						if(vA_01%2 == 0 && v%2 != 0){ //modudos iguais a -1, troca de par e impar
+							vt01[i+1] = vt01[i];
+							i--;
+						} else if((vA_01%2 != 0 && v%2 != 0) && (v > vA_01)){ //modulos iguais a -1, troca de 2 numeros impares						
+							vt01[i+1] = vt01[i];
+							i--;
+						} else if((vA_01%2 == 0 && v%2 == 0) && (v < vA_01)){ //modulos iguais a -1, troca de 2 numeros pares
+							vt01[i+1] = vt01[i];
+							i--;					
+						} else{
+							 break;
+		  				}
+				 	}
+					vt01[i+1] = v;
+			 	}
+				posV01++;
+
+			}else if(v%m == -1){
+				if(posV02 == 0){
+					vt02[0] = v;
+				}else{
+					vA_02 = vt02[posV01-1];//valor do vetor na posicao anterior
+					i = posV02 - 1;
+					while(i >= 0){
+						if(vA_02%2 == 0 && v%2 != 0){ //modudos maiores q -1, troca de par e impar
+							vt02[i+1] = vt02[i];
+							i--;
+						} else if((vA_02%2 != 0 && v%2 != 0) && (v > vA_02)){ //modulos maiores q -1, troca de 2 numeros impares						
+							vt02[i+1] = vt02[i];
+							i--;
+						} else if((vA_02%2 == 0 && v%2 == 0) && (v < vA_02)){ //modulos maiores q -1, troca de 2 numeros pares
+							vt02[i+1] = vt02[i];
+							i--;					
+						} else{
+							 break;
+		  				}
+				 	}
+					vt02[i+1] = v;
+			 	}
+				posV02++;
+			} 
 
 		}printf("%d %d\n", n, m);
+		for(i = 0; i < posV02; i++){
+			printf("%d\n", vt02[i]);
+		}
+		for(i = 0; i < posV01; i++){
+			printf("%d\n", vt01[i]);
+		}
 		for(i = 0; i < posV0; i++){
 			printf("%d\n", vt0[i]);
 		}
