@@ -12,9 +12,6 @@ int main(){
 	int i,v,n,m,j;
 	int absV, absVA;
 
-	int vtTest[tam],posTest;
-	
-
 	while(scanf("%d %d",&n,&m), n!=0 && m!=0){
 		j = n;
 	
@@ -164,10 +161,6 @@ int main(){
 				posV02++;
 			
 			}
-
-
-
-
 
 		}printf("%d %d\n", n, m);
 		for(i = 0; i < posV02; i++){
