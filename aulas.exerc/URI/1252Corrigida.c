@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #define tam 10001
 int main(){
 
-	int vt02[tam], posV02, vA02;
-	int vt01[tam], posV01, vA01;
-	int vt0[tam], posV0, vA0;
-	int vt1[tam], posV1, vA1;
-	int vt2[tam], posV2, vA2;
+	int32_t vt02[tam], posV02;
+	int32_t vt01[tam], posV01;
+	int32_t vt0[tam], posV0; 
+	int32_t vt1[tam], posV1;
+	int32_t vt2[tam], posV2;
 
-	int i,v,n,m,j;
-	int absV, absVA;
+	int32_t v;
+	int i,n,m,j;
+	
 
 	while(scanf("%d %d",&n,&m), n!=0 && m!=0){
 		j = n;
@@ -23,7 +25,7 @@ int main(){
 		
 		while(j--){
 
-			scanf("%d", &v);
+			scanf("%i", &v);
 			
 			if(v%m == 0){ // modulo 0;
 				if(posV0 == 0){
@@ -138,13 +140,13 @@ int main(){
 							i--;
 						}else if(vt02[i]%m < v%m){
 							break;		
-						}else if(abs(vt02[i])%2 == 0 && abs(v)%2 == 1){
+						}else if(vt02[i]%2 == 0 && v%2 == -1){
 							vt02[i+1] = vt02[i];						
 							i--;
-						}else if(abs(vt02[i])%2 == 0 && abs(v)%2 == 0 && vt02[i] > v){
+						}else if(vt02[i]%2 == 0 && v%2 == 0 && vt02[i] < v){
 							vt02[i+1] = vt02[i];						
 							i--;
-						}else if(abs(vt02[i])%2 == 1 && abs(v)%2 == 1 && vt02[i] < v){
+						}else if(vt02[i]%2 == -1 && v%2 == -1 && vt02[i] < v){
 							vt02[i+1] = vt02[i];						
 							i--;
 						}else{
@@ -159,19 +161,19 @@ int main(){
 
 		}printf("%d %d\n", n, m);
 		for(i = 0; i < posV02; i++){
-			printf("%d\n", vt02[i]);
+			printf("%i\n", vt02[i]);
 		}
 		for(i = 0; i < posV01; i++){
-			printf("%d\n", vt01[i]);
+			printf("%i\n", vt01[i]);
 		}
 		for(i = 0; i < posV0; i++){
-			printf("%d\n", vt0[i]);
+			printf("%i\n", vt0[i]);
 		}
 		for(i = 0; i < posV1; i++){
-			printf("%d\n", vt1[i]);
+			printf("%i\n", vt1[i]);
 		}	
 		for(i = 0; i < posV2; i++){
-			printf("%d\n", vt2[i]);
+			printf("%i\n", vt2[i]);
 		}
 
 	}
