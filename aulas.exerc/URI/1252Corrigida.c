@@ -9,14 +9,14 @@ int main(){
 	int vt1[tam], posV1, vA1;
 	int vt2[tam], posV2, vA2;
 
-	int i,v,n,m,j,k;
+	int i,v,n,m,j;
 	int absV, absVA;
 
 	int vtTest[tam],posTest;
 	
 
 	while(scanf("%d %d",&n,&m), n!=0 && m!=0){
-		k = n;
+		j = n;
 	
 		posV02 = 0;
 		posV01 = 0;
@@ -29,7 +29,7 @@ int main(){
 		
 
 		
-		while(k--){
+		while(j--){
 
 			scanf("%d", &v);
 			
@@ -56,26 +56,135 @@ int main(){
 					vt0[i+1] = v;	
 				}
 				posV0++;
-			} else { //modulo 1
 
-				vtTest[posTest] = v;
-				posTest++;
+			}else if(v%m == 1){ // modulo 1;
+				if(posV1 == 0){
+					vt1[0] = v;		
+				}else{
+					i = posV1 - 1;
+					while(i >= 0){
+						//sort
+						if(abs(vt1[i])%2 == 0 && abs(v)%2 == 1){
+							vt1[i+1] = vt1[i];						
+							i--;
+						}else if(abs(vt1[i])%2 == 0 && abs(v)%2 == 0 && vt1[i] > v){
+							vt1[i+1] = vt1[i];						
+							i--;
+						}else if(abs(vt1[i])%2 == 1 && abs(v)%2 == 1 && vt1[i] < v){
+							vt1[i+1] = vt1[i];						
+							i--;
+						}else{
+							break;
+						}
+					}
+					vt1[i+1] = v;	
+				}
+				posV1++;
+			
+			}else if(v%m > 1){ // modulo maior q 1;
+				if(posV2 == 0){
+					vt2[0] = v;		
+				}else{
+					i = posV2 - 1;
+					while(i >= 0){
+						//sort
+						if(vt2[i]%m > v%m){
+							vt2[i+1] = vt2[i];						
+							i--;
+						}else if(vt2[i]%m < v%m){
+							break;					
+						}else if(abs(vt2[i])%2 == 0 && abs(v)%2 == 1){
+							vt2[i+1] = vt2[i];						
+							i--;
+						}else if(abs(vt2[i])%2 == 0 && abs(v)%2 == 0 && vt2[i] > v){
+							vt2[i+1] = vt2[i];						
+							i--;
+						}else if(abs(vt2[i])%2 == 1 && abs(v)%2 == 1 && vt2[i] < v){
+							vt2[i+1] = vt2[i];						
+							i--;
+						}else{
+							break;
+						}
+					}
+					vt2[i+1] = v;	
+				}
+				posV2++;
 
-
+			}else if(v%m == -1){ // modulo -1;
+				if(posV01 == 0){
+					vt01[0] = v;		
+				}else{
+					i = posV01 - 1;
+					while(i >= 0){
+						//sort
+						if(abs(vt01[i])%2 == 0 && abs(v)%2 == 1){
+							vt01[i+1] = vt01[i];						
+							i--;
+						}else if(abs(vt01[i])%2 == 0 && abs(v)%2 == 0 && vt01[i] < v){
+							vt01[i+1] = vt01[i];						
+							i--;
+						}else if(abs(vt01[i])%2 == 1 && abs(v)%2 == 1 && vt01[i] > v){
+							vt01[i+1] = vt01[i];						
+							i--;
+						}else{
+							break;
+						}
+					}
+					vt01[i+1] = v;	
+				}
+				posV01++;
+			
+			}else { // modulo menor q -1;
+				if(posV02 == 0){
+					vt02[0] = v;		
+				}else{
+					i = posV02 - 1;
+					while(i >= 0){
+						//sort
+						if(vt02[i]%m > v%m){
+							vt02[i+1] = vt02[i];						
+							i--;
+						}else if(vt02[i]%m < v%m){
+							break;		
+						}else if(abs(vt02[i])%2 == 0 && abs(v)%2 == 1){
+							vt02[i+1] = vt02[i];						
+							i--;
+						}else if(abs(vt02[i])%2 == 0 && abs(v)%2 == 0 && vt02[i] < v){
+							vt02[i+1] = vt02[i];						
+							i--;
+						}else if(abs(vt02[i])%2 == 1 && abs(v)%2 == 1 && vt02[i] > v){
+							vt02[i+1] = vt02[i];						
+							i--;
+						}else{
+							break;
+						}
+					}
+					vt02[i+1] = v;	
+				}
+				posV02++;
+			
 			}
 
 
 
 
 
-		}printf("%d %d", n, m);
-		printf("\n\n");
+		}printf("%d %d\n", n, m);
+		for(i = 0; i < posV02; i++){
+			printf("%d\n", vt02[i]);
+		}
+		for(i = 0; i < posV01; i++){
+			printf("%d\n", vt01[i]);
+		}
 		for(i = 0; i < posV0; i++){
 			printf("%d\n", vt0[i]);
-		}printf("\n");
-		for(i = 0; i < posTest; i++){
-			printf("%d\n", vtTest[i]);
-		}printf("\n");
+		}
+		for(i = 0; i < posV1; i++){
+			printf("%d\n", vt1[i]);
+		}	
+		for(i = 0; i < posV2; i++){
+			printf("%d\n", vt2[i]);
+		}
 
 	}
 	return 0;
