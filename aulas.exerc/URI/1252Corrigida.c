@@ -141,10 +141,10 @@ int main(){
 						}else if(abs(vt02[i])%2 == 0 && abs(v)%2 == 1){
 							vt02[i+1] = vt02[i];						
 							i--;
-						}else if(abs(vt02[i])%2 == 0 && abs(v)%2 == 0 && vt02[i] < v){
+						}else if(abs(vt02[i])%2 == 0 && abs(v)%2 == 0 && vt02[i] > v){
 							vt02[i+1] = vt02[i];						
 							i--;
-						}else if(abs(vt02[i])%2 == 1 && abs(v)%2 == 1 && vt02[i] > v){
+						}else if(abs(vt02[i])%2 == 1 && abs(v)%2 == 1 && vt02[i] < v){
 							vt02[i+1] = vt02[i];						
 							i--;
 						}else{
