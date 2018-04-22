@@ -20,11 +20,6 @@ int main(){
 		posV0 = 0;
 		posV1 = 0;
 		posV2 = 0;
-	
-		posTest = 0;
-				
-		
-
 		
 		while(j--){
 
