@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 #define tam 10001
 int main(){
 
-	int32_t vt02[tam], posV02;
-	int32_t vt01[tam], posV01;
-	int32_t vt0[tam], posV0; 
-	int32_t vt1[tam], posV1;
-	int32_t vt2[tam], posV2;
+	int vt02[tam], posV02;
+	int vt01[tam], posV01;
+	int vt0[tam], posV0; 
+	int vt1[tam], posV1;
+	int vt2[tam], posV2;
 
-	int32_t v;
+	int v;
 	int i,n,m,j;
 	
 
@@ -128,7 +127,7 @@ int main(){
 				}
 				posV01++;
 			
-			}else { // modulo menor q -1; //correto
+			}else if(v%m < -1){ // modulo menor q -1; //correto
 				if(posV02 == 0){
 					vt02[0] = v;		
 				}else{
