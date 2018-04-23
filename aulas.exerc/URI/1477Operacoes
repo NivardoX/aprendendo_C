@@ -1,0 +1,60 @@
+n = 10 m = 7
+0 1 2 3 4 5 6 7 8 9
+h h h h h h h h h h
+
+c 1 10
+10h 0e 0r
+
+m 5 6
+0 1 2 3 4 5 6 7 8 9
+    	  e e
+
+c 5 6
+0h 2e 0r
+
+m 6 7
+0 1 2 3 4 5 6 7 8 9
+h h h h h e e h h h   
+		    r e
+
+c 4 8
+2h 2e 1r
+
+m 1 10
+0 1 2 3 4 5 6 7 8 9
+h h h h h e r e h h
+e e e e e r h r e e
+
+c 1 10
+1h 7e 2r
+
+fim de operacoes
+n = 5 m = 7
+0 1 2 3 4
+h h h h h
+
+m 1 5
+0 1 2 3 4
+h h h h h
+e e e e e
+
+m 2 4
+0 1 2 3 4
+e e e e e 
+  r r r
+
+m 1 2 
+0 1 2 3 4
+e r r r e
+r h 
+
+m 4 5 
+0 1 2 3 4
+r h r r e
+      h r
+
+c 1 5
+2h 0e 3r
+
+c 3 4
+1h 0e 1r
