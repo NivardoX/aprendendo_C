@@ -10,9 +10,9 @@ int main(){
 	while(i--){
 		scanf("%d", &n);
 		if(n > M){
-		M = n;
+			M = n;
 		}else if(n < m){
-		m = n;
+			m = n;
 		}		
 	}	
 	printf("O maior valor eh %d\nO menor valor eh %d\n",M,m);
