@@ -5,8 +5,8 @@ int main(){
 	printf("Digite 10 valores!\n");	
 	sum = 0;
 	while(i--){
-	scanf("%d", &n);
-	sum+= n;	
+		scanf("%d", &n);
+		sum+= n;	
 	}	
 	printf("A soma dos 10 valores eh %d\n", sum);
 	
