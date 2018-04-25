@@ -3,21 +3,19 @@
 
 char string[101];
 
-void troca();
+int troca(int i, int n);
 
 int main(){
 
 	scanf("%s", string);
 
-	troca();
+	troca(0,strlen(string));
 
 	return 0;
 }
 
-int i = 0;
-int n = strlen(string);
-		
-void troca(){
+
+int troca(int i, int n){
 	char aux;
 	
 	if(i == n || i > n){
@@ -28,8 +26,8 @@ void troca(){
 		string[n] = aux;
 		i++;
 		n--;
-		troca(string);
+		troca(i,n);
 	}
 
-	return;	
+	return 1;	
 }
