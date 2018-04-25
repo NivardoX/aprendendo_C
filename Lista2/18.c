@@ -21,7 +21,7 @@
 			printf("Velocidade = %.2f m/s\n", v);
 	
 		}	else if(opc == 'b'){
-				printf("Digite o valor da velocidade em Km/h\n");
+				printf("Digite o valor da velocidade em m/s\n");
 				scanf(" %f", &v);
 							
 				v = v * 3.6;
