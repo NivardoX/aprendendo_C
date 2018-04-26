@@ -2,7 +2,7 @@
 
 int main(){
 
-	int i,n;
+	int n;
 	
 	printf("Digite o valor a ser utilizado!\n");
 	scanf("%d", &n);
