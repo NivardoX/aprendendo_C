@@ -14,7 +14,7 @@ int main(){
 		c = c >> 1;
 	}
 
-	printf("O total de bits 1 eh %d\n", sum);
+	printf("O total de bits 0 eh %d\n", sum);
 
 	return 0;
 }
