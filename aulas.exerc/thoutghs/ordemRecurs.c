@@ -2,15 +2,18 @@
 
 
 int vt[100];
-vt[100] = {10,9,8,7,6,5,4,3,2,1};
+vt[100] = {54,63,456,8675,45,654,78,56,476,764};
 int aux;
 int ordenar(int pos);
 
 
 int main(){
 	int i;
-	
-	ordernar(9);
+
+	i = 9;
+	while(i--){
+		ordernar(9);
+	}
 	
 	for(i = 0; i < 10; i++){
 		printf("%d, ", vt[i]);
@@ -22,12 +25,14 @@ int main(){
 int ordernar(int pos){
 
 	if(pos == 0){
-		return 33;
+		return 0;
 	}else if(vt[pos] < vt[pos-1]){
 		aux = vt[pos];
 		vt[pos] = vt[pos-1];
 		vt[pos-1] = aux;
 		return ordernar(pos-1);
+	}else{
+		return ordernar(pos-1);
 	}
-	return 33;
+	return 0;
 }
