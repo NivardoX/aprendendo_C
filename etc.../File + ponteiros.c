@@ -83,7 +83,7 @@ int main(){
 	
 				if(fp == NULL){
 					cout << "Arquivo inexistente\n";
-					break;
+					main();
 				}					
 
 				ch = getc(fp);
