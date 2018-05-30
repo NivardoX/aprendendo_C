@@ -92,36 +92,49 @@ int main(){
 					break;
 
 				cout << endl;	
-
+					
+				cout << "------------------------------------------------\n";
+	
 				do{
 					cout << ch;
 					ch = getc(fp);	
 				}while(ch != EOF);
 	
+				cout << "------------------------------------------------\n";	
+
 				fclose(fp);
 				break;
 				
 
 			//remove
 			case 'R':
-				cout << "Tem certeza? Y/N\n";
-				cin >> opca;
-				if(opca == 'Y'){
-					remov = remove("linhas.txt");
-					if(remov){
-						cout << "O arquivo nao pode ser removido!\n";				
-					}else{
-						cout << "Arquivo removido com sucesso!\n";
+
+				fp = fopen("linhas.txt", "r");
+				
+				if(fp == NULL){
+					cout << "Arquivo inexistente\n";
+					break;
+				}else{
+
+					cout << "Tem certeza? Y/N\n";
+					cin >> opca;
+		
+					if(opca == 'Y'){
+						remov = remove("linhas.txt");
+						if(remov){
+							cout << "O arquivo nao pode ser removido!\n";				
+						}else{
+							cout << "Arquivo removido com sucesso!\n";
+						}
 					}
+
 				}
-					
+	
 				break;
 			default:
 				cout << "Opcao invalida!\n";	
 				break;
 		}
-
-		fclose(fp);
 
 	}
 
@@ -136,11 +149,8 @@ FILE criar(FILE *fp){
 		cout << "Arquivo nao criado\n";
 	}else
 		return *fp;
-
 }
-
 void alterar(){
-
 	
 }
 */
