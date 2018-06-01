@@ -38,7 +38,7 @@ int main(){
 	   exit(1);
 	}
 	
-	char *lixo;
+	char lixo[3];
 	fgets(lixo,2,pgm);
 	
 	//scaneia o tamanho e o lim
