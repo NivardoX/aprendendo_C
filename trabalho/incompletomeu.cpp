@@ -39,7 +39,7 @@ int main(){
 	//cout << "arquivo aberto\n";
 
 	char lixo[4];
-	char c;
+	unsigned char c;
 	fgets(lixo,ABSURDOMEUDEUS,pgm);
 	y = -1;
 	x = -1;
@@ -74,7 +74,7 @@ int main(){
 	M = criarMatriz(x+2, y+2);
 	bordear(M,x,y);			
 	lerImagem(M,x,y);
-	criarArquivoBorda(M,x+2,y+2, scale);
+	criarArquivoBorda(M,x+1,y+1, scale);
 
 	///////////////////////////////////////////////////////////////////////////////////
 	//teste matriz
@@ -159,7 +159,7 @@ unsigned char** lerImagem(unsigned char **M, int x, int y){
 	for(i = 1; i < x+1; i++){
 		for(j = 1; j < y+1; j++){
 
-			fscanf(pgm, "%c ", &temp);
+			fscanf(pgm, "%hhu ", &temp);
 			if(temp == '#' || temp == '\n'){
 				fgets(lixo, ABSURDOMEUDEUS, pgm);
 				j--;
