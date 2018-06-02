@@ -10,7 +10,7 @@ FILE *pgm;
 FILE *pgmSuave;
 
 unsigned char** criarMatriz(int x,int y);
-void lerImagem(	unsigned char **M,int x,int y);
+unsigned char** lerImagem(unsigned char **M,int x,int y);
 void bordear(unsigned char **M,int x,int y);
 unsigned char pos(unsigned char **M,int x,int y);
 
@@ -72,13 +72,13 @@ int main(){
 
 	M = criarMatriz(x+2, y+2);
 	bordear(M,x,y);			
+	lerImagem(M,x,y);
 
-		
 
 	///////////////////////////////////////////////////////////////////////////////////
 	//teste matriz
 	//
-	for(i = 1 ; i < x+1; i++){
+/*	for(i = 1 ; i < x+1; i++){
 		cout << "teste matriz 1\n";
 		for(j = 1; j < y+1; j++){
 			M[i][j] = 'Z';
@@ -86,6 +86,7 @@ int main(){
 		
 	}
 
+*/
 	for(i = 0; i < x+2; i++){
 		cout << "teste matriz 2\n";
 		for(j = 0; j < y+2; j++){
@@ -144,3 +145,44 @@ void bordear(unsigned char **M, int x, int y){
 	cout << " borda fim\n";
 
 }
+
+
+unsigned char** lerImagem(unsigned char **M, int x, int y){
+
+	int i,j;
+	char lixo[100];
+	unsigned char temp;
+
+	cout << "lendo imagem\n";
+	
+	for(i = 1; i < x+1; i++){
+		for(j = 1; j < y+1; j++){
+
+			fscanf(pgm, "%c ", &temp);
+			if(temp == '#' || temp == '\n'){
+				fgets(lixo, ABSURDOMEUDEUS, pgm);
+				j--;
+			}else if(temp == ' '){
+				j--;
+			}else{
+				M[i][j] = temp;	
+			}		
+		}
+	}
+	
+	cout << "lendo fim\n";
+
+	return M;
+}
+
+
+
+
+
+
+
+
+
+
+
+
