@@ -74,7 +74,7 @@ int main(){
 	M = criarMatriz(x+2, y+2);
 	bordear(M,x,y);			
 	lerImagem(M,x,y);
-	criarArquivoBorda(M,x+1,y+1, scale);
+	criarArquivoBorda(M,x+2,y+2, scale);
 
 	///////////////////////////////////////////////////////////////////////////////////
 	//teste matriz
