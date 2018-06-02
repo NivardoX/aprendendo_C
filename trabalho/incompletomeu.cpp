@@ -13,6 +13,7 @@ unsigned char** criarMatriz(int x,int y);
 unsigned char** lerImagem(unsigned char **M,int x,int y);
 void bordear(unsigned char **M,int x,int y);
 unsigned char pos(unsigned char **M,int x,int y);
+void criarArquivoBorda(unsigned char **M, int x, int y, int scale);
 
 
 int main(){
@@ -22,7 +23,7 @@ int main(){
 	
 	unsigned char **M;
 
-	cout << "inicio de main\n" ;
+	//cout << "inicio de main\n" ;
 
 	char pgmNome[30];
 	int scale, element,limite;
@@ -35,7 +36,7 @@ int main(){
 		exit(1);
 	}
 
-	cout << "arquivo aberto\n";
+	//cout << "arquivo aberto\n";
 
 	char lixo[4];
 	char c;
@@ -66,14 +67,14 @@ int main(){
 		}	
 	}
 
-	cout << "header lido\n";
-	printf("y = %d, x = %d, scale = %d", y,x,scale);
+	//cout << "header lido\n";
+	printf("y = %d, x = %d, scale = %d\n", y,x,scale);
 
 
 	M = criarMatriz(x+2, y+2);
 	bordear(M,x,y);			
 	lerImagem(M,x,y);
-
+	criarArquivoBorda(M,x+2,y+2, scale);
 
 	///////////////////////////////////////////////////////////////////////////////////
 	//teste matriz
@@ -88,7 +89,7 @@ int main(){
 
 */
 	for(i = 0; i < x+2; i++){
-		cout << "teste matriz 2\n";
+		//cout << "teste matriz 2\n";
 		for(j = 0; j < y+2; j++){
 			printf("%d\t",M[i][j]);
 		}
@@ -108,7 +109,7 @@ int main(){
 unsigned char** criarMatriz(int x, int y){
 	unsigned char **temp;
 
-	cout << "criando ini\n";
+	//cout << "criando ini\n";
 
 	temp = (unsigned char**)malloc(x* sizeof(char*));
 	
@@ -118,7 +119,7 @@ unsigned char** criarMatriz(int x, int y){
 		temp[i] = (unsigned char*)malloc(y*sizeof(char));
 	}
 
-	cout << "criando fim\n";
+	//cout << "criando fim\n";
 	
 	return temp;
 }
@@ -128,21 +129,21 @@ void bordear(unsigned char **M, int x, int y){
 
 	int i;
 
-	cout << "borda ini\n";
+	//cout << "borda ini\n";
 
 	for(i = 0; i <= x+1;i++){
 		M[0][i] = '0';
 		M[x+1][i] = '0';
 	}
 
-	cout << "borda meio\n";
+	//cout << "borda meio\n";
 
 	for(i = 0; i <= x+1;i++){
 		M[i][0] = '0';
 		M[i][y+1] = '0';
 	}
 	
-	cout << " borda fim\n";
+	//cout << " borda fim\n";
 
 }
 
@@ -153,7 +154,7 @@ unsigned char** lerImagem(unsigned char **M, int x, int y){
 	char lixo[100];
 	unsigned char temp;
 
-	cout << "lendo imagem\n";
+	//cout << "lendo imagem\n";
 	
 	for(i = 1; i < x+1; i++){
 		for(j = 1; j < y+1; j++){
@@ -170,15 +171,37 @@ unsigned char** lerImagem(unsigned char **M, int x, int y){
 		}
 	}
 	
-	cout << "lendo fim\n";
+	//cout << "lendo fim\n";
 
 	return M;
 }
 
 
 
+void criarArquivoBorda(unsigned char **M, int x, int y, int scale){
 
+	int i,j;
+	FILE *newPgm;
 
+	newPgm = fopen("bordas.pgm", "w+");
+
+	if(newPgm == NULL){
+		cout << "impossivel criar arquivo\n";
+		exit(1);
+	}
+
+	fprintf(newPgm,"P2\n");
+	fprintf(newPgm,"%d %d\n", y, x);
+	fprintf(newPgm,"%d\n", scale);
+
+	for(i = 0; i < x ; i++){
+		for(j = 0; j < y ; j++){
+			fprintf(newPgm,"%d ", M[i][j]);
+		}
+	}
+	fclose(newPgm);
+	cout << "arquivo criado com sucesso\n";
+}
 
 
 
